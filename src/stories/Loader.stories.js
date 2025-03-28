@@ -1,10 +1,13 @@
 import Loader from "@/components/Loader";
 
 export default {
-  title: "Loader",
+  title: "Components/Loader",
   component: Loader,
   parameters: {
     layout: "centered",
+    backgrounds: {
+      default: "Light",
+    },
   },
   tags: ["autodocs"],
 };
