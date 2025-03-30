@@ -12,4 +12,4 @@ export default {
   tags: ["autodocs"],
 };
 
-export const Default = () => <Loader />;
+export const Default = {};

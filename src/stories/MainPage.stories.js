@@ -1,9 +1,9 @@
-import Splash from "@/app/splash/page";
+import MainPage from "@/app/page.js";
 import { expect, userEvent, within } from "@storybook/test";
 
 export default {
-  title: "Pages/Splash",
-  component: Splash,
+  title: "Pages/Main",
+  component: MainPage,
   parameters: {
     layout: "fullscreen",
   },

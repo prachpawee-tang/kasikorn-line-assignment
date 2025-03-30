@@ -1,7 +1,6 @@
 // PinInput.js
 import React from "react";
-import PinDot from "./PinDot";
-import "@/styles/th-bank.css";
+import PinDot from "../PinInput/PinDot";
 
 const PinInput = ({ pinLength, currentLength }) => {
   return (

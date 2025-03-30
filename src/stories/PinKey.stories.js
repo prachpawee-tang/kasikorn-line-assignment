@@ -1,4 +1,4 @@
-import PinKey from "@/components/PinKey";
+import PinKey from "@/components/PinPad/PinKey";
 import { fn } from "@storybook/test";
 
 export default {

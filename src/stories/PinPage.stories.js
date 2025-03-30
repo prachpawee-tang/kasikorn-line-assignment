@@ -1,4 +1,4 @@
-import PinPage from "@/pages/PinPage";
+import PinPage from "@/app/pin/page";
 import { expect, userEvent, within } from "@storybook/test";
 
 export default {

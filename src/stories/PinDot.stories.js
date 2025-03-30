@@ -1,4 +1,4 @@
-import PinDot from "@/components/PinDot";
+import PinDot from "@/components/PinInput/PinDot";
 
 export default {
   title: "Components/Pin Component/Pin Dot",

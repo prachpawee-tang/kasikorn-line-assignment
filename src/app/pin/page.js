@@ -1,7 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
 import PinInput from "@/components/PinInput";
 import PinPad from "@/components/PinPad";
-import "@/styles/th-bank.css";
 
 const PinPage = ({
   userPhoto = "https://dummyimage.com/200x200/999/fff",
