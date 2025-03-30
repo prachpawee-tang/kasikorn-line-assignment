@@ -3,25 +3,36 @@
 import React, { useState } from "react";
 import PinInput from "@/components/PinInput";
 import PinPad from "@/components/PinPad";
+import { useRouter } from "next/navigation";
 
-const PinPage = ({
+const ATTEMPTS = 3;
+const PIN_LENGTH = 6;
+
+const PasscodePage = ({
   userPhoto = "https://dummyimage.com/200x200/999/fff",
   userName = "Interview User",
-  pinLength = 6,
-  showError = false,
-  attemptsLeft = 3,
-  onLoginWithIdPassword,
-  onPinSubmit,
 }) => {
   const [pin, setPin] = useState("");
+  const [error, setError] = useState(false);
+  const [attempts, setAttempts] = useState(ATTEMPTS);
+
+  const router = useRouter();
 
   const handleKeyPress = (value) => {
-    if (pin.length < pinLength) {
+    if (pin.length < PIN_LENGTH) {
       const newPin = pin + value;
       setPin(newPin);
+      setError(false);
 
-      if (newPin.length === pinLength) {
-        onPinSubmit(newPin);
+      if (newPin.length === PIN_LENGTH) {
+        if (newPin === "123456") {
+          router.push("/");
+          localStorage.setItem("authenticated", true);
+        } else {
+          setError(true);
+          setAttempts(attempts - 1);
+          setPin("");
+        }
       }
     }
   };
@@ -38,25 +49,35 @@ const PinPage = ({
             <img src={userPhoto} alt={userName} />
           </span>
           <h1 className="pin__name">{userName}</h1>
-          {showError && (
+          {error && (
             <p className="pin__dsc">
               Invalid PIN Code.
               <br />
-              You have {attemptsLeft} attempt left.
+              You have {attempts} attempt left.
             </p>
           )}
-          <PinInput pinLength={pinLength} currentLength={pin.length} />
+
+          <PinInput pinLength={PIN_LENGTH} currentLength={pin.length} />
         </div>
+
         <div className="pin__btm">
-          <a href="#" className="pin__login" onClick={onLoginWithIdPassword}>
+          <a
+            href="#"
+            className="pin__login"
+            onClick={() => router.push("/login")}
+          >
             Login with ID / Password
           </a>
           <span className="pin__kb">Powered by TestLab</span>
-          <PinPad onKeyPress={handleKeyPress} onDelete={handleDelete} />
+          <PinPad
+            onKeyPress={handleKeyPress}
+            onDelete={handleDelete}
+            disabled={attempts === 0}
+          />
         </div>
       </div>
     </main>
   );
 };
 
-export default PinPage;
+export default PasscodePage;

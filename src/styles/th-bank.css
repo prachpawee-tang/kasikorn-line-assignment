@@ -627,7 +627,7 @@ button {
 
 .pin__dsc {
   height: 37px;
-  margin-top: -37px;
+  /* margin-top: -37px; */
   font-size: 1.4rem;
   line-height: 1.8rem;
   color: #fff;

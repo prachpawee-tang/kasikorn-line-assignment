@@ -2,11 +2,14 @@
 import React from "react";
 import PinKey from "./PinKey";
 
-const PinPad = ({ onKeyPress, onDelete }) => {
+const PinPad = ({ onKeyPress, onDelete, disabled }) => {
   const handleKeyPress = (value) => () => onKeyPress(value);
 
   return (
-    <div className="pin__keys">
+    <div
+      className="pin__keys"
+      style={{ pointerEvents: disabled ? "none" : "" }}
+    >
       <PinKey value="1" onClick={handleKeyPress("1")} />
       <PinKey value="2" onClick={handleKeyPress("2")} />
       <PinKey value="3" onClick={handleKeyPress("3")} />

@@ -7,8 +7,20 @@ import RecentList from "@/components/RecentList";
 import DebitList from "@/components/DebitList";
 import AccountList from "@/components/AccountList";
 import BannerList from "@/components/BannerList";
+import Loader from "@/components/Loader";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Home() {
+  const { isLoading, isAuthenticated } = useAuth();
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (!isAuthenticated) {
+    return null;
+  }
+
   return (
     <div>
       <Header onMenuClick={() => {}} onCancelClick={() => {}} />

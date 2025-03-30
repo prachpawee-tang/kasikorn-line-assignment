@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@/styles/th-bank.css";
+import LocalStorageCleaner from "@/utils/LocalStorageCleaner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="wrap">{children}</div>
+        <LocalStorageCleaner />
+        <div className="wrap"> {children}</div>
       </body>
     </html>
   );
