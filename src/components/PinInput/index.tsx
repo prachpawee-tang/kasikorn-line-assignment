@@ -1,8 +1,13 @@
 // PinInput.js
 import React from "react";
-import PinDot from "../PinInput/PinDot";
+import PinDot from "./PinDot";
 
-const PinInput = ({ pinLength, currentLength }) => {
+interface PinInputProps {
+  pinLength: number;
+  currentLength: number;
+}
+
+const PinInput = ({ pinLength, currentLength }: PinInputProps) => {
   return (
     <div className="pin__dots">
       {Array.from({ length: pinLength }).map((_, index) => (

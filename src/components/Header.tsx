@@ -1,6 +1,9 @@
-import React from "react";
+interface HeaderProps {
+  onMenuClick: () => void;
+  onCancelClick: () => void;
+}
 
-const Header = ({ onMenuClick, onCancelClick }) => {
+const Header = ({ onMenuClick, onCancelClick }: HeaderProps) => {
   return (
     <header className="header ">
       <a href="#" className="header__lft header__menu" onClick={onMenuClick}>

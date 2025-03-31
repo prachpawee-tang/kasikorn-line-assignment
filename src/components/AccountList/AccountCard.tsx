@@ -1,14 +1,32 @@
 import React from "react";
 import Menu from "../Menu";
 
-const AccountCard = ({ account }) => {
+type AccountFlag = string;
+
+interface Account {
+  type: "smart-account" | "credit-loan" | "goal-saving-account";
+  color: string;
+  currency: string;
+  amount: number;
+  accountNumber: string;
+  flags?: AccountFlag[];
+  issuer?: string;
+  progress?: number;
+  accountName: string;
+}
+
+interface AccountCardProps {
+  account: Account;
+}
+
+const AccountCard = ({ account }: AccountCardProps) => {
   return (
     <div
       className="main-acc is-small"
       style={{ backgroundColor: account.color }}
     >
       <div className="main-acc__top">
-        <h2 className="main-acc__name">{account.type.replace("-", " ")}</h2>
+        <h2 className="main-acc__name">{account.accountName}</h2>
         <span className="main-acc__amount">
           {account.currency} {account.amount.toLocaleString()}
         </span>
@@ -76,7 +94,7 @@ const AccountCard = ({ account }) => {
             </div>
           </div>
         )}
-      {account.type === "saving-account" && (
+      {/* {account.type === "smart-account" && (
         <a href="#" className="main-acc__act main-acc__act--money">
           <span className="blind">Add money</span>
         </a>
@@ -85,7 +103,7 @@ const AccountCard = ({ account }) => {
         <a href="#" className="main-acc__act main-acc__act--pay">
           <span className="blind">Pay</span>
         </a>
-      )}
+      )} */}
     </div>
   );
 };

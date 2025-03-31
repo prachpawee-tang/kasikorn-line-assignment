@@ -11,17 +11,6 @@ const MockBannerData = [
 const BannerList = () => {
   const [banners, setBanners] = useState(MockBannerData);
 
-  //   useEffect(() => {
-  //     // Simulating API call
-  //     const fetchBanners = async () => {
-  //       const response = await fetch("/api/banners"); // Replace with actual API URL
-  //       const data = await response.json();
-  //       setBanners(data);
-  //     };
-
-  //     fetchBanners();
-  //   }, []);
-
   return (
     <div className="banner-list">
       {banners.map((banner, index) => (

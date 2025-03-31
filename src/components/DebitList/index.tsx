@@ -1,6 +1,20 @@
 import { useEffect, useState } from "react";
 import DebitItem from "./DebitItem";
 
+interface Debit {
+  number: string;
+  color: string;
+  name: string;
+  issuer: string;
+  status?: string;
+  borderColor?: string;
+  issuerColor?: string;
+}
+
+interface DebitListProps {
+  items?: Debit[];
+}
+
 // name, status, issuer, color, borderColor, number
 const MockDebitData = [
   {
@@ -33,7 +47,7 @@ const MockDebitData = [
   },
 ];
 
-const DebitList = ({ items = MockDebitData }) => {
+const DebitList = ({ items = MockDebitData }: DebitListProps) => {
   const [debitItems, setDebitItems] = useState(items);
 
   if (debitItems.length === 0) {

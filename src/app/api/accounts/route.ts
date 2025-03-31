@@ -1,13 +1,14 @@
 export async function GET() {
   return Response.json([
     {
-      type: "saving-account",
+      type: "smart-account",
       amount: 62000.0,
       currency: "THB",
       accountNumber: "568-2-81740-9",
       issuer: "TestLab",
       color: "#24c875",
       isMainAccount: true,
+      accountName: "Saving Account",
     },
     {
       type: "credit-loan",
@@ -17,6 +18,7 @@ export async function GET() {
       issuer: "TestLab",
       color: "#9366ed",
       isMainAccount: false,
+      accountName: "Credit Loan",
     },
     {
       type: "goal-saving-account",
@@ -27,6 +29,7 @@ export async function GET() {
       progress: 24,
       color: "#00a1e2",
       isMainAccount: false,
+      accountName: "Travel New York",
     },
     {
       type: "credit-loan",
@@ -37,6 +40,7 @@ export async function GET() {
       flags: ["Disbursement", "Overdue"],
       color: "#15bbc7",
       isMainAccount: false,
+      accountName: "Need to repay",
     },
   ]);
 }

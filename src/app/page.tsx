@@ -10,8 +10,11 @@ import BannerList from "@/components/BannerList";
 import Loader from "@/components/Loader";
 import { useAuth } from "@/hooks/useAuth";
 
-export default function Home() {
+const Home: React.FC = () => {
   const { isLoading, isAuthenticated } = useAuth();
+
+  const handleMenuClick = (): void => {};
+  const handleCancelClick = (): void => {};
 
   if (isLoading) {
     return <Loader />;
@@ -23,7 +26,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header onMenuClick={() => {}} onCancelClick={() => {}} />
+      <Header onMenuClick={handleMenuClick} onCancelClick={handleCancelClick} />
 
       <main className="container container--main">
         <div className="content_wrap">
@@ -35,7 +38,7 @@ export default function Home() {
           <BannerList />
 
           <div className="main-tb">
-            <a href="#" className="link-to">
+            <a href="#" className="link-to" role="button" tabIndex={0}>
               Total Balance
             </a>
           </div>
@@ -43,4 +46,6 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+export default Home;

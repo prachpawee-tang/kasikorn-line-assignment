@@ -1,7 +1,11 @@
 // PinDot.js
 import React from "react";
 
-const PinDot = ({ filled }) => (
+interface PinDotProps {
+  filled: boolean;
+}
+
+const PinDot = ({ filled }: PinDotProps) => (
   <span className={`pin__dot ${filled ? "is-filled" : ""}`}></span>
 );
 

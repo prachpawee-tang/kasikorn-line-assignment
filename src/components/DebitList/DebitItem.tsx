@@ -1,4 +1,21 @@
-const DebitItem = ({ name, status, issuer, color, borderColor, number }) => {
+interface DebitProps {
+  number: string;
+  color: string;
+  name: string;
+  issuer: string;
+  status?: string;
+  borderColor?: string;
+  issuerColor?: string;
+}
+
+const DebitItem = ({
+  name,
+  status,
+  issuer,
+  color,
+  borderColor,
+  number,
+}: DebitProps) => {
   return (
     <a
       href="#"

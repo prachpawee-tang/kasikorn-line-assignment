@@ -3,7 +3,14 @@ import Image from "next/image";
 import React from "react";
 import DeleteIcon from "@/assets/delete.png";
 
-const PinKey = ({ value, isDel, isSpace, onClick }) => {
+interface PinKeyProps {
+  value?: string;
+  isDel?: boolean;
+  isSpace?: boolean;
+  onClick?: () => void;
+}
+
+const PinKey = ({ value, isDel, isSpace, onClick }: PinKeyProps) => {
   if (isSpace) {
     return <span className="pin__key pin__key--space"></span>;
   }

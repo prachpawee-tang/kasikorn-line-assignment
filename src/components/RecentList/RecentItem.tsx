@@ -1,4 +1,16 @@
-const RecentListItem = ({ name, imgSrc, isBank, link = "#" }) => {
+interface RecentListItemProps {
+  name: string;
+  imgSrc: string;
+  isBank: boolean;
+  link?: string;
+}
+
+const RecentListItem = ({
+  name,
+  imgSrc,
+  isBank,
+  link = "#",
+}: RecentListItemProps) => {
   return (
     <li className="rctly__item">
       <a href={link} className="rctly__link">

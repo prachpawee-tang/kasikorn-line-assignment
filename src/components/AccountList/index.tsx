@@ -1,14 +1,28 @@
 import AccountCard from "./AccountCard";
 
-const MockAccountList = [
+interface Account {
+  type: "smart-account" | "credit-loan" | "goal-saving-account";
+  amount: number;
+  currency: string;
+  accountNumber: string;
+  issuer: string;
+  color: string;
+  isMainAccount: boolean;
+  progress?: number;
+  flags?: string[];
+  accountName: string;
+}
+
+const MockAccountList: Account[] = [
   {
-    type: "saving-account",
+    type: "smart-account",
     amount: 62000.0,
     currency: "THB",
     accountNumber: "568-2-81740-9",
     issuer: "TestLab",
     color: "#24c875",
     isMainAccount: true,
+    accountName: "Saving Account",
   },
   {
     type: "credit-loan",
@@ -18,6 +32,7 @@ const MockAccountList = [
     issuer: "TestLab",
     color: "#9366ed",
     isMainAccount: false,
+    accountName: "Credit Loan",
   },
   {
     type: "goal-saving-account",
@@ -28,6 +43,7 @@ const MockAccountList = [
     progress: 24,
     color: "#00a1e2",
     isMainAccount: false,
+    accountName: "Travel New York",
   },
   {
     type: "credit-loan",
@@ -38,10 +54,15 @@ const MockAccountList = [
     flags: ["Disbursement", "Overdue"],
     color: "#15bbc7",
     isMainAccount: false,
+    accountName: "Need to repay",
   },
 ];
 
-const AccountList = ({ accounts = MockAccountList }) => {
+interface AccountListProps {
+  accounts?: Account[];
+}
+
+const AccountList = ({ accounts = MockAccountList }: AccountListProps) => {
   return (
     <div>
       {accounts.map((account, index) => (
