@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import counterReducer from "@/redux/features/counter/slice";
 import userReducer from "@/redux/features/user/slice";
 import accountsReducer from "@/redux/features/accounts/slice";
 import { rootSaga } from "@/redux/rootSaga";
@@ -12,7 +11,6 @@ export const makeStore = () => {
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(sagaMiddleware),
     reducer: {
-      counter: counterReducer,
       user: userReducer,
       accounts: accountsReducer,
     },
