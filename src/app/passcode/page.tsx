@@ -27,7 +27,7 @@ const PasscodePage = ({
       if (newPin.length === PIN_LENGTH) {
         if (newPin === "123456") {
           router.push("/");
-          localStorage.setItem("authenticated", true);
+          localStorage.setItem("authenticated", "true");
         } else {
           setError(true);
           setAttempts(attempts - 1);

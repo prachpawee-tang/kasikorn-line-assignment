@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@/styles/th-bank.css";
 import LocalStorageCleaner from "@/utils/LocalStorageCleaner";
+import { Counter } from "@/components/counter";
+import { StoreProvider } from "@/components/StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +27,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LocalStorageCleaner />
-        <div className="wrap"> {children}</div>
+        <StoreProvider>
+          <div className="wrap">
+            <Counter />
+            {children}
+          </div>
+        </StoreProvider>
       </body>
     </html>
   );
