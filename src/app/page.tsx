@@ -9,9 +9,19 @@ import AccountList from "@/components/AccountList";
 import BannerList from "@/components/BannerList";
 import Loader from "@/components/Loader";
 import { useAuth } from "@/hooks/useAuth";
+import { useAppDispatch } from "@/redux/hook";
+import { useEffect } from "react";
+import { fetchUserRequest } from "@/redux/features/user/slice";
+import { fetchAccountsRequest } from "@/redux/features/accounts/slice";
 
 const Home: React.FC = () => {
   const { isLoading, isAuthenticated } = useAuth();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserRequest());
+    dispatch(fetchAccountsRequest());
+  }, []);
 
   const handleMenuClick = (): void => {};
   const handleCancelClick = (): void => {};

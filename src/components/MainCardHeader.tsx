@@ -1,9 +1,8 @@
-interface MainCardHeaderProps {
-  greeting?: string;
-  name?: string;
-}
+import { useAppSelector } from "@/redux/hook";
 
-const MainCardHeader = ({ greeting, name = "User" }: MainCardHeaderProps) => {
+const MainCardHeader = () => {
+  const { greetingMessage, name } = useAppSelector((state) => state.user);
+
   return (
     <div className="main-top">
       <h1
@@ -11,7 +10,7 @@ const MainCardHeader = ({ greeting, name = "User" }: MainCardHeaderProps) => {
         role="heading"
         aria-level={1}
       >
-        {greeting || `Have a nice day ${name}`}
+        {greetingMessage || `Have a nice day ${name}`}
       </h1>
     </div>
   );

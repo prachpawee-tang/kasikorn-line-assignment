@@ -1,10 +1,8 @@
 import { all } from "redux-saga/effects";
 import { watchIncrementAsync } from "@/redux/features/counter/saga";
-
-export function* helloSaga() {
-  console.log("Hello Sagas!");
-}
+import { watchUser } from "./features/user/saga";
+import { watchAccounts } from "./features/accounts/saga";
 
 export function* rootSaga() {
-  yield all([helloSaga(), watchIncrementAsync()]);
+  yield all([watchIncrementAsync(), watchUser(), watchAccounts()]);
 }
