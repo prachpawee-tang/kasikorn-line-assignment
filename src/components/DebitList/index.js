@@ -1,19 +1,44 @@
 import { useEffect, useState } from "react";
 import DebitItem from "./DebitItem";
 
-const DebitList = () => {
-  const [debitItems, setDebitItems] = useState([]);
+// name, status, issuer, color, borderColor, number
+const MockDebitData = [
+  {
+    number: "9440 7812 3456 3115",
+    color: "#00a1e2", // Blue
+    name: "My Salary",
+    issuer: "TestLab",
+    status: "in-progress",
+  },
+  {
+    number: "9440 7834 5678 3115",
+    color: "#ff8300", // Orange
+    name: "For My Dream",
+    issuer: "TestLab",
+    status: "in-progress",
+  },
+  {
+    number: "9440 7856 7890 3115",
+    color: "#ffffff", // White
+    name: "For My Dream",
+    issuer: "TestLab",
+    borderColor: "#f2f3f7",
+    issuerColor: "#d3d3d2",
+  },
+  {
+    number: "9440 7878 9012 3115",
+    color: "#91c9ee", // Light Blue
+    name: "For My Dream",
+    issuer: "TestLab",
+  },
+];
 
-  //   useEffect(() => {
-  //     fetch("https://api.example.com/debit-list")
-  //       .then((response) => response.json())
-  //       .then((data) => setDebitItems(data))
-  //       .catch((error) => console.error("Error fetching data:", error));
-  //   }, []);
+const DebitList = ({ items = MockDebitData }) => {
+  const [debitItems, setDebitItems] = useState(items);
 
   if (debitItems.length === 0) {
     return (
-      <a className="main-make main-loading main-loading--order6 mb-10">
+      <a className="main-make main-loading main-loading--order6">
         <span className="main-make__img">
           <img src="../img/main/img-debitcard-make.png" alt="" />
         </span>

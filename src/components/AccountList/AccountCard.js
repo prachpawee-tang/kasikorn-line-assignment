@@ -8,7 +8,7 @@ const AccountCard = ({ account }) => {
       style={{ backgroundColor: account.color }}
     >
       <div className="main-acc__top">
-        <h2 className="main-acc__name">{account.type.replace(/-/g, " ")}</h2>
+        <h2 className="main-acc__name">{account.type.replace("-", " ")}</h2>
         <span className="main-acc__amount">
           {account.currency} {account.amount.toLocaleString()}
         </span>
@@ -21,7 +21,7 @@ const AccountCard = ({ account }) => {
       </div>
       <div className="main-acc__bottom">
         <span className="main-acc__detail">
-          {account.type} {account.accountNumber}
+          {account.type.replace("-", " ")} {account.accountNumber}
         </span>
         {account.issuer && (
           <span className="main-acc__detail">Powered by {account.issuer}</span>

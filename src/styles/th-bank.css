@@ -1117,6 +1117,7 @@ button {
   overflow: hidden;
   -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.09);
+  margin-bottom: 20px;
 }
 
 .main-make__tit {
@@ -1172,7 +1173,7 @@ button {
 
 .debit-swipe__wrap {
   overflow-y: hidden;
-  margin: 0 -25px;
+  margin: 0 -25px 20px;
 }
 
 .debit-swipe__inner {

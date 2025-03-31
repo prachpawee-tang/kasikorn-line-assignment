@@ -12,14 +12,20 @@ const DebitItem = ({ name, status, issuer, color, borderColor, number }) => {
       }}
     >
       <strong className="debit-swipe__name">{name}</strong>
-      {number ? (
+      {status !== "in-progress" ? (
         <span className="debit-swipe__etc debit-swipe__etc--active">
           <span className="debit-swipe__etc__num">
-            {number.replace(/(\d{4}) (?=\d{4})/g, "$1 ")}
+            {number
+              .replace(/(\d{4}) (?=\d{4})/g, "$1 ")
+              .split("")
+              .map((char, index) =>
+                index >= 7 && index <= 13 && char !== " " ? "•" : char
+              )
+              .join("")}
           </span>
         </span>
       ) : (
-        <span className="debit-swipe__etc">{status}</span>
+        <span className="debit-swipe__etc">In progress</span>
       )}
       <span className="debit-swipe__issue">Issued by {issuer}</span>
     </a>
