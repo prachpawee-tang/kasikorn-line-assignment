@@ -2,6 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import userReducer from "@/redux/features/user/slice";
 import accountsReducer from "@/redux/features/accounts/slice";
+import bannersReducer from "@/redux/features/banners/slice";
+import debitCardsReducer from "@/redux/features/debit-cards/slice";
+import transactionsReducer from "@/redux/features/transactions/slice";
 import { rootSaga } from "@/redux/rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
@@ -13,6 +16,9 @@ export const makeStore = () => {
     reducer: {
       user: userReducer,
       accounts: accountsReducer,
+      banners: bannersReducer,
+      debitCards: debitCardsReducer,
+      transactions: transactionsReducer,
     },
   });
 

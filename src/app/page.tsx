@@ -1,5 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
+
+import { useAuth } from "@/hooks/useAuth";
+import { useAppDispatch } from "@/redux/hook";
+import { fetchUserRequest } from "@/redux/features/user/slice";
+import { fetchAccountsRequest } from "@/redux/features/accounts/slice";
+import { fetchBannersRequest } from "@/redux/features/banners/slice";
+import { fetchDebitCardsRequest } from "@/redux/features/debit-cards/slice";
+import { fetchRecentTransactionsRequest } from "@/redux/features/transactions/slice";
+
+// Component imports
 import Header from "@/components/Header";
 import MainAccountCard from "@/components/MainAccountCard";
 import MainCardHeader from "@/components/MainCardHeader";
@@ -8,20 +19,22 @@ import DebitList from "@/components/DebitList";
 import AccountList from "@/components/AccountList";
 import BannerList from "@/components/BannerList";
 import Loader from "@/components/Loader";
-import { useAuth } from "@/hooks/useAuth";
-import { useAppDispatch } from "@/redux/hook";
-import { useEffect } from "react";
-import { fetchUserRequest } from "@/redux/features/user/slice";
-import { fetchAccountsRequest } from "@/redux/features/accounts/slice";
 
-const Home: React.FC = () => {
+const Home = () => {
   const { isLoading, isAuthenticated } = useAuth();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchUserRequest());
-    dispatch(fetchAccountsRequest());
-  }, []);
+    const fetchInitialData = () => {
+      dispatch(fetchUserRequest());
+      dispatch(fetchAccountsRequest());
+      dispatch(fetchBannersRequest());
+      dispatch(fetchDebitCardsRequest());
+      dispatch(fetchRecentTransactionsRequest());
+    };
+
+    fetchInitialData();
+  }, [dispatch]);
 
   const handleMenuClick = (): void => {};
   const handleCancelClick = (): void => {};

@@ -1,54 +1,8 @@
-import { useEffect, useState } from "react";
 import DebitItem from "./DebitItem";
+import { useAppSelector } from "@/redux/hook";
 
-interface Debit {
-  number: string;
-  color: string;
-  name: string;
-  issuer: string;
-  status?: string;
-  borderColor?: string;
-  issuerColor?: string;
-}
-
-interface DebitListProps {
-  items?: Debit[];
-}
-
-// name, status, issuer, color, borderColor, number
-const MockDebitData = [
-  {
-    number: "9440 7812 3456 3115",
-    color: "#00a1e2", // Blue
-    name: "My Salary",
-    issuer: "TestLab",
-    status: "in-progress",
-  },
-  {
-    number: "9440 7834 5678 3115",
-    color: "#ff8300", // Orange
-    name: "For My Dream",
-    issuer: "TestLab",
-    status: "in-progress",
-  },
-  {
-    number: "9440 7856 7890 3115",
-    color: "#ffffff", // White
-    name: "For My Dream",
-    issuer: "TestLab",
-    borderColor: "#f2f3f7",
-    issuerColor: "#d3d3d2",
-  },
-  {
-    number: "9440 7878 9012 3115",
-    color: "#91c9ee", // Light Blue
-    name: "For My Dream",
-    issuer: "TestLab",
-  },
-];
-
-const DebitList = ({ items = MockDebitData }: DebitListProps) => {
-  const [debitItems, setDebitItems] = useState(items);
+const DebitList = () => {
+  const debitItems = useAppSelector((state) => state.debitCards.DebitCards);
 
   if (debitItems.length === 0) {
     return (

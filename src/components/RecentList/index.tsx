@@ -1,38 +1,8 @@
+import { useAppSelector } from "@/redux/hook";
 import RecentListItem from "./RecentItem";
 
 const RecentList = () => {
-  const recentItems = [
-    {
-      name: "Emily",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: false,
-    },
-    {
-      name: "AbcdEfghiJKlmN",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: true,
-    },
-    {
-      name: "Jone Kiersten",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: false,
-    },
-    {
-      name: "Emily",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: false,
-    },
-    {
-      name: "Emily",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: false,
-    },
-    {
-      name: "MarkYu Gonzales",
-      imgSrc: "https://dummyimage.com/54x54/999/fff",
-      isBank: true,
-    },
-  ];
+  const recentItems = useAppSelector((state) => state.transactions.recents);
 
   return (
     <div className="rctly__wrap main-loading main-loading--order5">

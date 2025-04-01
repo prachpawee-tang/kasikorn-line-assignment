@@ -1,13 +1,13 @@
 interface RecentListItemProps {
   name: string;
-  imgSrc: string;
+  image: string;
   isBank: boolean;
   link?: string;
 }
 
 const RecentListItem = ({
   name,
-  imgSrc,
+  image,
   isBank,
   link = "#",
 }: RecentListItemProps) => {
@@ -15,7 +15,7 @@ const RecentListItem = ({
     <li className="rctly__item">
       <a href={link} className="rctly__link">
         <span className={`rctly__thumb ${isBank ? "is-bank" : ""}`}>
-          <img src={imgSrc} alt="" />
+          <img src={image} alt="" />
         </span>
         <span className="rctly__name">{name}</span>
       </a>

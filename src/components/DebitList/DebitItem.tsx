@@ -1,11 +1,10 @@
 interface DebitProps {
-  number: string;
+  number?: string;
   color: string;
   name: string;
   issuer: string;
-  status?: string;
+  status: "active" | "in-progress";
   borderColor?: string;
-  issuerColor?: string;
 }
 
 const DebitItem = ({
@@ -29,7 +28,7 @@ const DebitItem = ({
       }}
     >
       <strong className="debit-swipe__name">{name}</strong>
-      {status !== "in-progress" ? (
+      {status === "active" ? (
         <span className="debit-swipe__etc debit-swipe__etc--active">
           <span className="debit-swipe__etc__num">
             {number
@@ -42,7 +41,7 @@ const DebitItem = ({
           </span>
         </span>
       ) : (
-        <span className="debit-swipe__etc">In progress</span>
+        <span className="debit-swipe__etc">{status.replace("-", " ")}</span>
       )}
       <span className="debit-swipe__issue">Issued by {issuer}</span>
     </a>

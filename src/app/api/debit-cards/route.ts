@@ -14,7 +14,7 @@ export async function GET() {
     },
     {
       name: "My Debit card",
-      status: "Active",
+      status: "active",
       issuer: "TestLab",
       color: "#ffffff",
       borderColor: "#f2f3f7",

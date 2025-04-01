@@ -14,7 +14,7 @@ export default {
 
 const args = {
   items: [
-    { label: "Set as Main Account", action: () => {} },
+    { label: "Set Main Account", action: () => {} },
     { label: "Copy account number", action: () => {} },
     { label: "Edit Name and Color", action: () => {} },
   ],
