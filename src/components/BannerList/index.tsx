@@ -1,4 +1,5 @@
 import { useAppSelector } from "@/redux/hook";
+import Banner from "./Banner";
 
 const BannerList = () => {
   const banners = useAppSelector((state) => state.banners.banners);
@@ -6,13 +7,7 @@ const BannerList = () => {
   return (
     <div className="banner-list">
       {banners?.map((banner, index) => (
-        <a href="#" className="main-prod" key={index}>
-          <span className="main-prod__cms-ico">
-            <img src={banner.image} alt={banner.title} />
-          </span>
-          <strong className="main-prod__tit">{banner.title}</strong>
-          <p className="main-prod__dsc">{banner.description}</p>
-        </a>
+        <Banner banner={banner} key={`banner-${index}`} />
       ))}
     </div>
   );
