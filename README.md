@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KBank Line - Frontend Assignment
 
-## Getting Started
+This is a frontend assignment project for applying to the Frontend Developer position at Kasikorn Line. The application is built using Next.js and includes functionalities such as authentication via passcode, displaying bank account details, debit cards, and recent transactions.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js** - React framework for server-side rendering and static site generation.
+- **Redux-Saga** - Middleware for managing side effects in Redux.
+- **Jest** - JavaScript testing framework for unit testing.
+- **Storybook** - UI component development and testing tool.
+- **Axios** - HTTP client for API calls.
+- **Tailwind CSS** - Utility-first CSS framework for styling.
+
+## Features
+
+- **Splash Screen** - Initial loading screen.
+- **Passcode Screen** - Authentication via passcode input.
+- **Bank Account List** - Displays user’s bank accounts.
+- **Debit Card List** - Showcases the user’s linked debit cards.
+- **Recent Transactions** - Displays the latest transactions made by the user.
+
+## Project Structure
+
+```
+src/
+│── app/
+│   ├── api/              # API handlers
+│   ├── passcode/         # Passcode page
+│   ├── favicon.ico       # App icon
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Layout wrapper component
+│   ├── page.tsx          # Main page component
+│
+│── assets/               # Static assets (images, icons, etc.)
+│
+│── components/           # Reusable UI components
+│
+│── hooks/                # Custom React hooks
+│
+│── redux/                # State management using Redux
+│   ├── features/         # Redux slices and actions
+│   ├── hook.ts           # Redux custom hooks
+│   ├── rootSaga.ts       # Redux Saga configuration
+│   ├── store.ts          # Redux store setup
+│
+│── stories/              # Storybook stories for UI components
+│
+│── styles/               # Additional styles and themes
+│
+│── utils/                # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation and Setup
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```sh
+   git clone https://github.com/prachpawee-tang/kasikorn-line-assignment.git
+   cd kasikorn-line-assignment
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```sh
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```sh
+   npm run dev
+   ```
 
-## Deploy on Vercel
+   The application will be available at `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Build for production:
+   ```sh
+   npm run build
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Testing
+
+Run unit tests using Jest:
+
+```sh
+npm run test
+```
+
+Run Storybook for UI component testing:
+
+```sh
+npm run storybook
+```
+
+## Deployment
+
+To deploy the application:
+
+```sh
+npm run build
+npm start
+```
+
+## Contribution
+
+If you’d like to contribute or suggest improvements, feel free to create a pull request or open an issue.
+
+## License
+
+This project is for assessment purposes only and is not intended for public distribution.
