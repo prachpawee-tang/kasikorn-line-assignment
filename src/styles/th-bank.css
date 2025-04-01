@@ -288,6 +288,7 @@ button {
 }
 
 .container {
+  max-width: 100% !important;
   overflow-x: hidden;
   display: -webkit-box;
   display: -webkit-box;

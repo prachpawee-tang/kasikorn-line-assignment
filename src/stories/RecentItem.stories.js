@@ -12,7 +12,7 @@ export default {
 export const Default = {
   args: {
     name: "TestLab",
-    imgSrc: "https://dummyimage.com/54x54/999/fff",
+    image: "https://dummyimage.com/54x54/999/fff",
     isBank: true,
   },
 };

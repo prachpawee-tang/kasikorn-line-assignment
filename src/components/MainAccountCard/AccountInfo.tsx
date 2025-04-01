@@ -1,3 +1,5 @@
+import { getCurrencySymbol } from "@/utils/currencySymbol";
+
 interface Account {
   type: string;
   amount: number;
@@ -17,7 +19,8 @@ const AccountInfo = ({ info }: AccountInfoProps) => (
   <div className="main-acc__top">
     <h2 className="main-acc__name">{info.accountName}</h2>
     <span className="main-acc__amount">
-      {info.currency} {info.amount.toLocaleString()}
+      {getCurrencySymbol(info.currency)}
+      {info.amount.toLocaleString()}
     </span>
     <span className="main-acc__detail main-acc__detail--num">
       {info.type} {info.accountNumber}

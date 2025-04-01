@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "../Menu";
+import { getCurrencySymbol } from "@/utils/currencySymbol";
 
 type AccountFlag = string;
 
@@ -28,7 +29,8 @@ const AccountCard = ({ account }: AccountCardProps) => {
       <div className="main-acc__top">
         <h2 className="main-acc__name">{account.accountName}</h2>
         <span className="main-acc__amount">
-          {account.currency} {account.amount.toLocaleString()}
+          {getCurrencySymbol(account.currency)}
+          {account.amount.toLocaleString()}
         </span>
         {account.flags &&
           account.flags.map((flag) => (

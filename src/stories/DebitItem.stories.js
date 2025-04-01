@@ -15,6 +15,7 @@ export const Default = {
     color: "#91c9ee", // Light Blue
     name: "For My Dream",
     issuer: "TestLab",
+    status: "active",
   },
 };
 
@@ -25,7 +26,7 @@ export const WhiteCard = {
     name: "For My Dream",
     issuer: "TestLab",
     borderColor: "#f2f3f7",
-    issuerColor: "#d3d3d2",
+    status: "active",
   },
 };
 
