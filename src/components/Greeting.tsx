@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/redux/hook";
 
-const MainCardHeader = () => {
+const Greeting = () => {
   const { greetingMessage, name } = useAppSelector((state) => state.user);
 
   return (
@@ -16,4 +16,4 @@ const MainCardHeader = () => {
   );
 };
 
-export default MainCardHeader;
+export default Greeting;

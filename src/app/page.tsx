@@ -13,7 +13,7 @@ import { fetchRecentTransactionsRequest } from "@/redux/features/transactions/sl
 // Component imports
 import Header from "@/components/Header";
 import MainAccountCard from "@/components/MainAccountCard";
-import MainCardHeader from "@/components/MainCardHeader";
+import Greeting from "@/components/Greeting";
 import RecentList from "@/components/RecentList";
 import DebitList from "@/components/DebitList";
 import AccountList from "@/components/AccountList";
@@ -53,7 +53,7 @@ const Home = () => {
 
       <main className="container container--main">
         <div className="content_wrap">
-          <MainCardHeader />
+          <Greeting />
           <MainAccountCard />
           <RecentList />
           <DebitList />

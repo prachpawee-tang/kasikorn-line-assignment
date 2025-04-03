@@ -9,7 +9,7 @@ interface PinInputProps {
 
 const PinInput = ({ pinLength, currentLength }: PinInputProps) => {
   return (
-    <div className="pin__dots">
+    <div className="pin__dots" data-testid="pin-dots">
       {Array.from({ length: pinLength }).map((_, index) => (
         <PinDot key={index} filled={index < currentLength} />
       ))}

@@ -6,7 +6,10 @@ interface PinDotProps {
 }
 
 const PinDot = ({ filled }: PinDotProps) => (
-  <span className={`pin__dot ${filled ? "is-filled" : ""}`}></span>
+  <span
+    className={`pin__dot ${filled ? "is-filled" : ""}`}
+    data-filled={filled}
+  ></span>
 );
 
 export default PinDot;

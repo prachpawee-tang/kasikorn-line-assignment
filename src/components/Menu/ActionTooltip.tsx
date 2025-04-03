@@ -14,6 +14,8 @@ const ActionTooltip = ({ show, items }) => (
     className="tooltip"
     style={{ display: show ? "block" : "none" }}
     role="menu"
+    data-testid="actions-tooltip"
+    data-show={show}
   >
     {items.map(({ action, label }) => (
       <ActionBtn key={label} onClick={action}>

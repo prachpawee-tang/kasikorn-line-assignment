@@ -92,15 +92,6 @@ Run Storybook for UI component testing:
 npm run storybook
 ```
 
-## Deployment
-
-To deploy the application:
-
-```sh
-npm run build
-npm start
-```
-
 ## Contribution
 
 If you’d like to contribute or suggest improvements, feel free to create a pull request or open an issue.

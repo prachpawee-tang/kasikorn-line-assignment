@@ -9,7 +9,7 @@ interface PinPadProps {
 }
 
 const PinPad = ({ onKeyPress, onDelete, disabled }: PinPadProps) => {
-  const handleKeyPress = (value) => () => onKeyPress(value);
+  const handleKeyPress = (value: string) => () => onKeyPress(value);
 
   return (
     <div

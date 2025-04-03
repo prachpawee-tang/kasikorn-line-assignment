@@ -12,7 +12,9 @@ interface PinKeyProps {
 
 const PinKey = ({ value, isDel, isSpace, onClick }: PinKeyProps) => {
   if (isSpace) {
-    return <span className="pin__key pin__key--space"></span>;
+    return (
+      <span className="pin__key pin__key--space" data-testid="space-key"></span>
+    );
   }
 
   if (isDel) {
@@ -21,6 +23,7 @@ const PinKey = ({ value, isDel, isSpace, onClick }: PinKeyProps) => {
         type="button"
         className="pin__key pin__key--del"
         onClick={onClick}
+        data-testid="delete-key"
       >
         <Image
           src={DeleteIcon}
@@ -34,7 +37,12 @@ const PinKey = ({ value, isDel, isSpace, onClick }: PinKeyProps) => {
   }
 
   return (
-    <button type="button" className="pin__key" onClick={onClick}>
+    <button
+      type="button"
+      className="pin__key"
+      onClick={onClick}
+      data-testid={`number-key-${value}`}
+    >
       {value}
     </button>
   );
