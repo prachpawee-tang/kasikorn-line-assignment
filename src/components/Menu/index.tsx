@@ -26,7 +26,7 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
   };
 
   return (
-    <div data-testid="menu-component">
+    <>
       <button
         type="button"
         className={`main-acc__more ${size ? `main-acc__more--${size}` : ""}`}
@@ -36,12 +36,13 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
         onBlur={handleBlur}
         aria-expanded={showAction}
         aria-label="More actions"
+        data-testid="menu-component"
       >
         <span className="blind">More Action</span>
       </button>
       <ActionsTooltip items={items} show={showAction} />
       {tip && <BubbleTooltip tip={tip} show={showTooltip} />}
-    </div>
+    </>
   );
 };
 

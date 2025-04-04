@@ -1,5 +1,5 @@
 const AccountActions = () => (
-  <div data-testid="main-actions">
+  <div className="main-acc__bottom" data-testid="main-actions">
     <div className="main-acc__ani_box">
       <div className="main-acc__ani__item">
         <span className="main-acc__ani_img1"></span>

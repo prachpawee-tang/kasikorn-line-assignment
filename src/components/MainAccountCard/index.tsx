@@ -18,9 +18,7 @@ const MainAccountCard = () => {
       data-testid="main-account"
     >
       <AccountInfo info={mainAccount} />
-      <div className="main-acc__bottom">
-        <AccountActions />
-      </div>
+      <AccountActions />
 
       <Menu
         items={[
