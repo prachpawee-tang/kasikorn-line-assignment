@@ -6,10 +6,11 @@ interface Account {
   currency: string;
   accountNumber: string;
   issuer: string;
-  progress: number;
+  progress?: number;
   color: string;
   isMainAccount: boolean;
   accountName: string;
+  flags?: string[];
 }
 
 interface AccountState {
