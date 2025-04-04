@@ -26,7 +26,7 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
   };
 
   return (
-    <>
+    <div data-testid="menu-component">
       <button
         type="button"
         className={`main-acc__more ${size ? `main-acc__more--${size}` : ""}`}
@@ -41,7 +41,7 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
       </button>
       <ActionsTooltip items={items} show={showAction} />
       {tip && <BubbleTooltip tip={tip} show={showTooltip} />}
-    </>
+    </div>
   );
 };
 

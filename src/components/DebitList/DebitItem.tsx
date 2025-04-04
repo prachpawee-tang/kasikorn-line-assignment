@@ -32,7 +32,7 @@ const DebitItem = ({
         <span className="debit-swipe__etc debit-swipe__etc--active">
           <span className="debit-swipe__etc__num">
             {number
-              .replace(/(\d{4}) (?=\d{4})/g, "$1 ")
+              ?.replace(/(\d{4}) (?=\d{4})/g, "$1 ")
               .split("")
               .map((char, index) =>
                 index >= 7 && index <= 13 && char !== " " ? "•" : char

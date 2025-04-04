@@ -41,7 +41,7 @@ const AccountCard = ({ account }: AccountCardProps) => {
       </div>
       <div className="main-acc__bottom">
         <span className="main-acc__detail">
-          {account.type.replace("-", " ")} {account.accountNumber}
+          {account.type.replaceAll("-", " ")} {account.accountNumber}
         </span>
         {account.issuer && (
           <span className="main-acc__detail">Powered by {account.issuer}</span>
@@ -58,12 +58,13 @@ const AccountCard = ({ account }: AccountCardProps) => {
 
       {account.type === "goal-saving-account" &&
         account.progress !== undefined && (
-          <div className="main-acc__circle">
+          <div className="main-acc__circle" data-testid="progress-chart">
             <svg
               className="graph-bar"
               width="100%"
               height="100%"
               viewBox="0 0 42 42"
+              data-testid="circles"
             >
               <circle
                 cx="21"

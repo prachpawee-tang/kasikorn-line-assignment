@@ -13,7 +13,10 @@ const MainAccountCard = () => {
   }
 
   return (
-    <div className="main-acc main-acc--large main-loading main-loading--order3">
+    <div
+      className="main-acc main-acc--large main-loading main-loading--order3"
+      data-testid="main-account"
+    >
       <AccountInfo info={mainAccount} />
       <div className="main-acc__bottom">
         <AccountActions />

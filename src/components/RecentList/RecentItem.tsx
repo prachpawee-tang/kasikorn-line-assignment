@@ -12,10 +12,10 @@ const RecentListItem = ({
   link = "#",
 }: RecentListItemProps) => {
   return (
-    <li className="rctly__item">
+    <li className="rctly__item" data-testid="recent-item">
       <a href={link} className="rctly__link">
         <span className={`rctly__thumb ${isBank ? "is-bank" : ""}`}>
-          <img src={image} alt="" />
+          <img src={image} alt="" role="img" />
         </span>
         <span className="rctly__name">{name}</span>
       </a>

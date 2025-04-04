@@ -6,18 +6,12 @@ const RecentList = () => {
 
   return (
     <div className="rctly__wrap main-loading main-loading--order5">
-      <RecentListItems items={recentItems} />
+      <ul className="rctly__lst">
+        {recentItems.map((item, index) => (
+          <RecentListItem key={index} {...item} />
+        ))}
+      </ul>
     </div>
-  );
-};
-
-const RecentListItems = ({ items }) => {
-  return (
-    <ul className="rctly__lst">
-      {items.map((item, index) => (
-        <RecentListItem key={index} {...item} />
-      ))}
-    </ul>
   );
 };
 

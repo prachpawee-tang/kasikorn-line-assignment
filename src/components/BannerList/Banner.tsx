@@ -10,7 +10,7 @@ interface BannerProps {
 
 const Banner = ({ banner }: BannerProps) => {
   return (
-    <a href="#" className="main-prod">
+    <a href="#" className="main-prod" data-testid="banner">
       <span className="main-prod__cms-ico">
         <img src={banner.image} alt={banner.title} />
       </span>
