@@ -51,7 +51,7 @@ const PasscodePage = ({
           <h1 className="pin__name">{userName}</h1>
           {error && (
             <p className="pin__dsc">
-              Invalid PIN Code.
+              Invalid PIN Code. (help: 111111)
               <br />
               You have {attempts} attempt left.
             </p>
