@@ -925,9 +925,6 @@ button {
 }
 
 .main-acc__more {
-  position: absolute;
-  top: 24px;
-  right: 11px;
   width: 24px;
   height: 24px;
   background-image: url(../assets/dots.png);
@@ -998,9 +995,9 @@ button {
 }
 
 .main-acc .tooltip {
-  top: 58px;
-  right: 17px;
-  min-width: 170px;
+  top: 30px;
+  right: 10px;
+  min-width: 220px;
   max-width: calc(100% - 51px);
   padding: 19px 24px;
   z-index: 9;
