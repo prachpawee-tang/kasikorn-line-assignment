@@ -27,7 +27,7 @@ const PasscodePage = ({
       if (newPin.length === PIN_LENGTH) {
         if (newPin === "111111") {
           router.push("/");
-          localStorage.setItem("authenticated", "true");
+          sessionStorage.setItem("authenticated", "true");
         } else {
           setError(true);
           setAttempts(attempts - 1);
@@ -42,7 +42,7 @@ const PasscodePage = ({
   };
 
   return (
-    <main className="container container--pin-type">
+    <main className="container container--pin-type max-h-[100dvh]">
       <div className="pin">
         <div className="pin__top">
           <span className="pin__photo">

@@ -3,7 +3,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 export const useAuth = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const authenticated = localStorage.getItem("authenticated");
+  const authenticated = sessionStorage.getItem("authenticated");
   const pathname = usePathname();
   const router = useRouter();
 

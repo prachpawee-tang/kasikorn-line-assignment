@@ -36,8 +36,12 @@ const Home = () => {
     fetchInitialData();
   }, [dispatch]);
 
-  const handleMenuClick = (): void => {};
-  const handleCancelClick = (): void => {};
+  const handleMenuClick = (): void => {
+    console.log("open menu");
+  };
+  const handleCancelClick = (): void => {
+    console.log("close window");
+  };
 
   if (isLoading) {
     return <Loader />;

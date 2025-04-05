@@ -15,8 +15,8 @@ describe("useAuth", () => {
   const mockRouter = { push: mockPush };
   const mockPathname = "/dashboard";
 
-  // Mock localStorage
-  const mockLocalStorage = {
+  // Mock sessionStorage
+  const mockSessionStorage = {
     getItem: jest.fn(),
   };
 
@@ -28,9 +28,9 @@ describe("useAuth", () => {
     (useRouter as jest.Mock).mockReturnValue(mockRouter);
     (usePathname as jest.Mock).mockReturnValue(mockPathname);
 
-    // Setup localStorage mock
-    Object.defineProperty(window, "localStorage", {
-      value: mockLocalStorage,
+    // Setup sessionStorage mock
+    Object.defineProperty(window, "sessionStorage", {
+      value: mockSessionStorage,
       writable: true,
     });
 
@@ -43,7 +43,7 @@ describe("useAuth", () => {
   });
 
   it("should show loading state initially", () => {
-    mockLocalStorage.getItem.mockReturnValue(null);
+    mockSessionStorage.getItem.mockReturnValue(null);
 
     const { result } = renderHook(() => useAuth());
 
@@ -52,7 +52,7 @@ describe("useAuth", () => {
   });
 
   it("should not be loading after timer if authenticated", () => {
-    mockLocalStorage.getItem.mockReturnValue("true");
+    mockSessionStorage.getItem.mockReturnValue("true");
 
     const { result } = renderHook(() => useAuth());
 
@@ -65,7 +65,7 @@ describe("useAuth", () => {
   });
 
   it("should redirect to passcode page if not authenticated", () => {
-    mockLocalStorage.getItem.mockReturnValue(null);
+    mockSessionStorage.getItem.mockReturnValue(null);
 
     renderHook(() => useAuth());
 
@@ -77,7 +77,7 @@ describe("useAuth", () => {
   });
 
   it("should not redirect if already on passcode page", () => {
-    mockLocalStorage.getItem.mockReturnValue(null);
+    mockSessionStorage.getItem.mockReturnValue(null);
     (usePathname as jest.Mock).mockReturnValue("/passcode");
 
     renderHook(() => useAuth());
