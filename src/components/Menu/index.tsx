@@ -43,10 +43,6 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
       setShowTooltip(false);
     }
   };
-  const handleBlur = (): void => {
-    setShowTooltip(false);
-    setShowAction(false);
-  };
 
   const handleTouchStart = (): void => {
     if (!isMobile || !tip) return;
@@ -100,7 +96,6 @@ const Menu = ({ items = [], tip, size }: MenuProps) => {
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        // onBlur={handleBlur}
         aria-expanded={showAction}
         aria-label="More actions"
         data-testid="menu-component"

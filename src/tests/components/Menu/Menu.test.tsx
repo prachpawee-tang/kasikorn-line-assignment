@@ -52,19 +52,25 @@ describe("Menu Component", () => {
     expect(bubbleTooltip).toHaveAttribute("data-show", "false");
   });
 
-  it("hides tooltips on blur", () => {
+  it("hides tooltips when clicking outside menu", () => {
     const testTip = "Test Tooltip";
-    render(<Menu items={mockItems} tip={testTip} />);
+    render(
+      <div>
+        <Menu items={mockItems} tip={testTip} />
+        <div data-testid="outside-element">Outside</div>
+      </div>
+    );
     const button = screen.getByRole("button");
     const actionsTooltip = screen.getByTestId("actions-tooltip");
     const bubbleTooltip = screen.getByTestId("bubble-tooltip");
+    const outsideElement = screen.getByTestId("outside-element");
 
     // Show tooltips
     fireEvent.click(button);
     fireEvent.mouseEnter(button);
 
-    // Blur should hide both tooltips
-    fireEvent.blur(button);
+    // Click outside should hide both tooltips
+    fireEvent.mouseDown(outsideElement);
     expect(actionsTooltip).toHaveAttribute("data-show", "false");
     expect(bubbleTooltip).toHaveAttribute("data-show", "false");
   });
