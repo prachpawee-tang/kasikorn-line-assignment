@@ -47,9 +47,12 @@ src/
 │
 │── styles/               # Additional styles and themes
 │
-│── utils/                # Utility functions
+│── tests/                # Unit tests for application components and features
 │
-│── tests/                # Tests folder
+│── types/                # TypeScript type definitions and interfaces
+│
+│── utils/                # Utility functions
+
 ```
 
 ## Installation and Setup
