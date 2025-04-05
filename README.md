@@ -48,6 +48,8 @@ src/
 │── styles/               # Additional styles and themes
 │
 │── utils/                # Utility functions
+│
+│── tests/                # Tests folder
 ```
 
 ## Installation and Setup
