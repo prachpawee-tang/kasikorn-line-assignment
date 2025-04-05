@@ -23,7 +23,7 @@ const args = {
 
 export const Default = () => (
   <div className="wrap">
-    <div className="main-acc main-acc--large main-loading main-loading--order3">
+    <div className="main-acc is-small">
       <Menu {...args} />
     </div>
   </div>
@@ -31,7 +31,7 @@ export const Default = () => (
 
 export const Small = () => (
   <div className="wrap">
-    <div className="main-acc main-acc--large main-loading main-loading--order3">
+    <div className="main-acc is-small">
       <Menu size="small" {...args} />
     </div>
   </div>

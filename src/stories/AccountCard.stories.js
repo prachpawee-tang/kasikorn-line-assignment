@@ -1,4 +1,5 @@
 import AccountCard from "@/components/AccountList/AccountCard";
+import "@/app/globals.css";
 import "@/styles/th-bank.css";
 
 export default {

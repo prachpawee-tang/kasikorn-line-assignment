@@ -1,21 +1,7 @@
+import { Account } from "@/types";
 import { getCurrencySymbol } from "@/utils/currencySymbol";
 
-interface Account {
-  type: string;
-  amount: number;
-  currency: string;
-  accountNumber: string;
-  issuer: string;
-  color: string;
-  isMainAccount: boolean;
-  accountName: string;
-}
-
-interface AccountInfoProps {
-  info: Account;
-}
-
-const AccountInfo = ({ info }: AccountInfoProps) => (
+const AccountInfo = ({ info }: { info: Account }) => (
   <div className="main-acc__top">
     <h2 className="main-acc__name">{info.accountName}</h2>
     <span className="main-acc__amount">

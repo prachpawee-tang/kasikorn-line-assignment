@@ -1,13 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface DebitCard {
-  name: string;
-  status: "active" | "in-progress";
-  issuer: string;
-  color: string;
-  borderColor?: string;
-  number?: string;
-}
+import { DebitCard } from "@/types";
 
 interface DebitCardState {
   DebitCards: DebitCard[];

@@ -1,11 +1,4 @@
-interface DebitProps {
-  number?: string;
-  color: string;
-  name: string;
-  issuer: string;
-  status: "active" | "in-progress";
-  borderColor?: string;
-}
+import { DebitCard } from "@/types";
 
 const DebitItem = ({
   name,
@@ -14,7 +7,7 @@ const DebitItem = ({
   color,
   borderColor,
   number,
-}: DebitProps) => {
+}: DebitCard) => {
   return (
     <a
       href="#"

@@ -1,13 +1,8 @@
+import { Recent } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Transaction {
-  name: string;
-  image: string;
-  isBank: boolean;
-}
-
 interface TransactionState {
-  recents: Transaction[];
+  recents: Recent[];
   loading: boolean;
   error: string | null;
 }
@@ -28,7 +23,7 @@ const TransactionsSlice = createSlice({
     },
     fetchRecentTransactionsSuccess: (
       state,
-      action: PayloadAction<Transaction[]>
+      action: PayloadAction<Recent[]>
     ) => {
       state.loading = false;
       state.recents = action.payload;

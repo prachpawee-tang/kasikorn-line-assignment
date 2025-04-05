@@ -1,3 +1,4 @@
+import { User } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface UserState {
@@ -22,10 +23,7 @@ const userSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-    fetchUserSuccess: (
-      state,
-      action: PayloadAction<{ name: string; greetingMessage: string }>
-    ) => {
+    fetchUserSuccess: (state, action: PayloadAction<User>) => {
       state.loading = false;
       state.name = action.payload.name;
       state.greetingMessage = action.payload.greetingMessage;

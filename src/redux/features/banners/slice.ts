@@ -1,10 +1,5 @@
+import { Banner } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Banner {
-  title: string;
-  description: string;
-  image: string;
-}
 
 interface BannerState {
   banners: Banner[];

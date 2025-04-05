@@ -1,26 +1,9 @@
 import React from "react";
 import Menu from "../Menu";
 import { getCurrencySymbol } from "@/utils/currencySymbol";
+import { Account } from "@/types";
 
-type AccountFlag = string;
-
-interface Account {
-  type: "smart-account" | "credit-loan" | "goal-saving-account";
-  color: string;
-  currency: string;
-  amount: number;
-  accountNumber: string;
-  flags?: AccountFlag[];
-  issuer?: string;
-  progress?: number;
-  accountName: string;
-}
-
-interface AccountCardProps {
-  account: Account;
-}
-
-const AccountCard = ({ account }: AccountCardProps) => {
+const AccountCard = ({ account }: { account: Account }) => {
   return (
     <div
       className="main-acc is-small"

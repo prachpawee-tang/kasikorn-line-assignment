@@ -1,16 +1,6 @@
-interface RecentListItemProps {
-  name: string;
-  image: string;
-  isBank: boolean;
-  link?: string;
-}
+import { Recent } from "@/types";
 
-const RecentListItem = ({
-  name,
-  image,
-  isBank,
-  link = "#",
-}: RecentListItemProps) => {
+const RecentListItem = ({ name, image, isBank, link = "#" }: Recent) => {
   return (
     <li className="rctly__item" data-testid="recent-item">
       <a href={link} className="rctly__link">

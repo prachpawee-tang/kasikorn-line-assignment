@@ -1,17 +1,5 @@
+import { Account } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Account {
-  type: "goal-saving-account" | "credit-loan" | "smart-account";
-  amount: number;
-  currency: string;
-  accountNumber: string;
-  issuer: string;
-  progress?: number;
-  color: string;
-  isMainAccount: boolean;
-  accountName: string;
-  flags?: string[];
-}
 
 interface AccountState {
   accounts: Account[];
