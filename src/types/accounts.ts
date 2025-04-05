@@ -8,4 +8,5 @@ export interface Account {
   issuer?: string;
   progress?: number;
   accountName: string;
+  isMainAccount: boolean;
 }

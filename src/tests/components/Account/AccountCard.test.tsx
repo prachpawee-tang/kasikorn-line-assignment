@@ -3,6 +3,17 @@ import { render, screen } from "@testing-library/react";
 import AccountCard from "@/components/AccountList/AccountCard";
 import { getCurrencySymbol } from "@/utils/currencySymbol";
 
+// Mock Menu with a testid to assert its rendering
+jest.mock("@/components/Menu", () => ({ items, size }: any) => (
+  <div data-testid="menu-component">
+    {items.map((item: any) => (
+      <button key={item.label} onClick={item.action}>
+        {item.label}
+      </button>
+    ))}
+  </div>
+));
+
 describe("AccountCard", () => {
   const mockSmartAccount = {
     type: "smart-account" as const,
@@ -12,6 +23,7 @@ describe("AccountCard", () => {
     accountNumber: "1234567890",
     accountName: "Main Account",
     flags: ["Primary"],
+    isMainAccount: false,
   };
 
   const mockGoalAccount = {
@@ -23,6 +35,7 @@ describe("AccountCard", () => {
     accountName: "Vacation Fund",
     progress: 75,
     issuer: "Example Bank",
+    isMainAccount: false,
   };
 
   it("renders basic account information correctly", () => {
